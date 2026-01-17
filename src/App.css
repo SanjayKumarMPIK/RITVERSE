@@ -1,0 +1,43 @@
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+.error-banner {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(245, 87, 108, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  animation: slideInUp 0.3s ease-out;
+  max-width: 90%;
+}
+
+.error-banner button {
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.error-banner button:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+

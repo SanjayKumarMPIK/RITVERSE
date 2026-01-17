@@ -1,0 +1,394 @@
+.explorer-pass-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.explorer-pass-container .stars,
+.explorer-pass-container .stars2,
+.explorer-pass-container .stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.explorer-pass-container .stars {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="20" cy="20" r="1" fill="white" opacity="0.8"/><circle cx="80" cy="40" r="1" fill="white" opacity="0.6"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.7"/><circle cx="90" cy="90" r="1" fill="white" opacity="0.5"/><circle cx="10" cy="60" r="1" fill="white" opacity="0.9"/><circle cx="60" cy="10" r="1" fill="white" opacity="0.6"/><circle cx="30" cy="50" r="1" fill="white" opacity="0.8"/><circle cx="70" cy="70" r="1" fill="white" opacity="0.7"/></svg>') repeat;
+  animation: sparkle 3s infinite;
+}
+
+.explorer-pass-container .stars2 {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150"><circle cx="30" cy="30" r="1" fill="white" opacity="0.6"/><circle cx="120" cy="60" r="1" fill="white" opacity="0.4"/><circle cx="60" cy="120" r="1" fill="white" opacity="0.5"/><circle cx="140" cy="140" r="1" fill="white" opacity="0.3"/><circle cx="20" cy="90" r="1" fill="white" opacity="0.7"/><circle cx="90" cy="20" r="1" fill="white" opacity="0.5"/></svg>') repeat;
+  animation: sparkle 4s infinite reverse;
+}
+
+.explorer-pass-container .stars3 {
+  background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><circle cx="40" cy="40" r="1.5" fill="white" opacity="0.4"/><circle cx="160" cy="80" r="1.5" fill="white" opacity="0.3"/><circle cx="80" cy="160" r="1.5" fill="white" opacity="0.5"/><circle cx="180" cy="180" r="1.5" fill="white" opacity="0.2"/></svg>') repeat;
+  animation: sparkle 5s infinite;
+}
+
+.pass-wrapper {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+  width: 100%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pass-wrapper.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.celebration-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5rem;
+  animation: celebrate 2s ease-out forwards;
+  animation-delay: var(--delay);
+  transform-origin: center;
+}
+
+@keyframes celebrate {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-100px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-200px) scale(0.5);
+  }
+}
+
+.pass-card {
+  background: linear-gradient(135deg, rgba(26, 35, 126, 0.3) 0%, rgba(74, 20, 140, 0.3) 100%);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 100px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.pass-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+.pass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.universe-rank {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--space-gold);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  letter-spacing: 2px;
+}
+
+.status-badge {
+  background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+.pass-main {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.badge-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.badge-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge {
+  font-size: 6rem;
+  position: relative;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.6));
+}
+
+.pass-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+}
+
+.signature-line {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.pass-details {
+  margin: 40px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.pass-details.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.details-section {
+  margin-bottom: 30px;
+}
+
+.details-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--space-cyan);
+  text-align: center;
+}
+
+.traits-list,
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.trait-item,
+.skill-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.5s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+.trait-item:hover,
+.skill-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateX(5px);
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.trait-icon,
+.skill-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.trait-text,
+.skill-text {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.pass-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 30px 0;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.pass-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.restart-button,
+.share-button {
+  flex: 1;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.restart-button {
+  background: var(--gradient-1);
+  color: white;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.restart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.share-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.share-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.pass-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  bottom: -75px;
+  left: -75px;
+  animation-delay: 2s;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: -50px;
+  animation-delay: 4s;
+}
+
+@media (max-width: 768px) {
+  .pass-card {
+    padding: 30px 20px;
+  }
+
+  .badge {
+    font-size: 4.5rem;
+  }
+
+  .badge-glow {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pass-title {
+    font-size: 1.8rem;
+  }
+
+  .pass-actions {
+    flex-direction: column;
+  }
+
+  .restart-button,
+  .share-button {
+    width: 100%;
+  }
+}
+
