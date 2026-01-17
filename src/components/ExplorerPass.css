@@ -98,6 +98,38 @@
   overflow: hidden;
 }
 
+/* Better rendering for image capture */
+.pass-card.capturing {
+  background: linear-gradient(135deg, rgba(26, 35, 126, 0.98) 0%, rgba(74, 20, 140, 0.98) 100%);
+  backdrop-filter: none;
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 0 100px rgba(102, 126, 234, 0.4);
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.pass-card.capturing .pass-details {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  display: block !important;
+}
+
+.pass-card.capturing .trait-item,
+.pass-card.capturing .skill-item {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  animation: none !important;
+}
+
+/* Certificate container for image generation */
+.certificate-container {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
 .pass-card::before {
   content: '';
   position: absolute;
