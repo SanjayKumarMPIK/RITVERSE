@@ -5,7 +5,7 @@
 
 .error-banner {
   position: fixed;
-  top: 20px;
+  top: 100px;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);

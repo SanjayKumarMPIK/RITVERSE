@@ -1,0 +1,68 @@
+.rit-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 100;
+  background: rgba(10, 14, 39, 0.95);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 15px 0;
+}
+
+.rit-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.rit-logo-image {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  /* Preserve exact logo appearance - no filters or modifications */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  max-width: 100%;
+}
+
+.rit-logo-placeholder {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  padding: 10px;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rit-header {
+    padding: 15px 20px;
+    border-radius: 0 0 12px 0;
+  }
+
+  .rit-logo-image {
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rit-header {
+    padding: 12px 15px;
+    border-radius: 0 0 10px 0;
+  }
+
+  .rit-logo-image {
+    height: 45px;
+  }
+}
+

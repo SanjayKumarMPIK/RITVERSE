@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import Quiz from './components/Quiz';
 import StudentProfile from './components/StudentProfile';
@@ -70,6 +71,7 @@ function App() {
 
   return (
     <div className="app">
+      <Header />
       {error && (
         <div className="error-banner">
           <span>⚠️ {error}</span>

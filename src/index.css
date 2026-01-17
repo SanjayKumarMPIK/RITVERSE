@@ -28,6 +28,22 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  padding-top: 0;
+  padding-left: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 0;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 0;
+    padding-left: 0;
+  }
 }
 
 body::before {
